@@ -13,7 +13,7 @@
       <button type="submit" [disabled]="!registerForm.valid">Register</button>
       <p>Already have account? <a routerLink="/login">Sign In</a></p>
       <div *ngIf="form.submitted && isRegisterFailed" class="error">
-        Login failed: {{ errorMessage }}
+        Register failed: {{ errorMessage }}
       </div>
     </form>
   </div>
