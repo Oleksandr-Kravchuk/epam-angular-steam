@@ -6,7 +6,7 @@ before_install:
 install: npm install
 branches:
   only:
-  - master
+  - main
 deploy:
   provider: heroku
   app: angular-lab-steamlike
