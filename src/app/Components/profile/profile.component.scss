@@ -1,0 +1,61 @@
+.profile-wrap {
+  width: 320px;
+  height: auto;
+  background-color: #ffffff;
+}
+
+form {
+  margin: 60px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input {
+    display: block;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: #6C69FF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten($color: #6C69FF, $amount: 5);
+
+    }
+  }
+}
+
+.error {
+  margin-top: 20px;
+  font-size: 18px;
+  color: red;
+}
+
+.success {
+  margin-top: 20px;
+  font-size: 20px;
+  color: blue;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

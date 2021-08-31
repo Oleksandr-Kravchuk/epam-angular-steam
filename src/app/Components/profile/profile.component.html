@@ -1,0 +1,20 @@
+<div class="profile-container">
+  <div class="profile-wrap">
+    <form *ngIf="profileForm" #form="ngForm" [formGroup]="profileForm" (ngSubmit)="onSave()">
+      <h2>Profile</h2>
+      <label for="profileForm-password">Username</label>
+      <input type="text" id="profileForm-username" formControlName="username" placeholder="Username">
+      <label for="profileForm-email">Email</label>
+      <input type="email" id="profileForm-email" formControlName="email" placeholder="Email">
+      <label for="profileForm-age">Age</label>
+      <input type="number" id="profileForm-age" formControlName="age" placeholder="Age">
+      <button type="submit" [disabled]="!profileForm.valid">Save</button>
+      <div *ngIf="form.submitted && isProfileFormFail && isMessage" class="error">
+        Login failed: {{ errorMessage }}
+      </div>
+      <div *ngIf="form.submitted && isProfileFormSuccess && isMessage" class="success">
+        Profile has been updated
+      </div>
+    </form>
+  </div>
+</div>

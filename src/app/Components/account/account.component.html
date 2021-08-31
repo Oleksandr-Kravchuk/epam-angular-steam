@@ -1,0 +1,24 @@
+<nav *ngIf="isLoggedIn" class="navbar">
+  <img src="../assets/brand.svg" alt="Steam" class="navbar__logo">
+  <ul  class="nav">
+    <li class="nav__item">
+      <a class="nav__link" routerLink="/games" routerLinkActive="nav__link_active">Games</a>
+    </li>
+    <li class="nav__item">
+      <a class="nav__link" routerLink="/library" routerLinkActive="nav__link_active">Library</a>
+    </li>
+    <li class="nav__item">
+      <a class="nav__link" routerLink="/friends" routerLinkActive="nav__link_active">Friends</a>
+    </li>
+    <li class="nav__item">
+      <a class="nav__link" routerLink="/profile" routerLinkActive="nav__link_active">Profile</a>
+    </li>
+    <li class="nav__item">
+      <a href class="nav__link" (click)="logout()" routerLink="/login">LogOut</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="content-container">
+  <router-outlet></router-outlet>
+</div>

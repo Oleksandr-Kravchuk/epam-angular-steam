@@ -1,0 +1,27 @@
+<h2>Friends</h2>
+
+<div class="search-box">
+  <div class="search-box__input">
+    <label for="search-box">Search Friends</label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Search Friends"/>
+  </div>
+  <button type="button" class="search-box__btn" (click)="findFriends(searchBox.value)">Search</button>
+</div>
+
+<h2>
+  {{isSearch ? 'Search Friends: '+ searchBox.value : 'My Friends'}}
+</h2>
+
+<div *ngFor="let friend of friends" class="friend-container" >
+  <p class="friend-email">{{friend.email}}</p>
+  <button *ngIf="isSearch" type="button" class="friend-add" (click)="addFriend(friend)">Add Friend</button>
+  <button *ngIf="!isSearch" type="button" class="friend-remove" (click)="removeFriend(friend)">Remove Friend</button>
+</div>
+
+<div *ngIf="isAddRemoveFail && isMessage" class="error">
+  {{isAddFriend ? 'Friend added' : 'Friend removed'}} failed: {{ message }}
+</div>
+
+<div *ngIf="isAddRemoveSuccess && isMessage" class="success">
+  {{isAddFriend ? 'Friend added' : 'Friend removed'}}
+</div>

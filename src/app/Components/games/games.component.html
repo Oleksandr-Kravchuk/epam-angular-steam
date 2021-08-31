@@ -1,0 +1,23 @@
+<h2>Games</h2>
+
+<div class="search-box">
+  <div class="search-box__input">
+    <label for="search-box">Search Games</label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="Search Games"/>
+  </div>
+  <button type="button" class="search-box__btn" (click)="findGames(searchBox.value)">Search</button>
+</div>
+<h2>
+  {{isSearch ? 'Search Games: '+ searchBox.value : 'Featured Games'}}
+</h2>
+
+<div class="games-container">
+  <div class="game-wrap">
+    <div class="game-card" *ngFor="let game of games">
+      <h3>{{game.title}}</h3>
+      <span>{{game.price}} UAH</span>
+      <p>{{game.description}}</p>
+      <button type="button" (click)="addGame(game)">Add to Library</button>
+    </div>
+  </div>
+</div>

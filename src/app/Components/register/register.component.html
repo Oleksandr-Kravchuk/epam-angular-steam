@@ -1,0 +1,20 @@
+<div class="register-container">
+  <div class="register-wrap">
+    <form *ngIf="registerForm" #form="ngForm" [formGroup]="registerForm"  (ngSubmit)="onSubmit()">
+      <h2>Register</h2>
+      <label for="registerForm-username">Username</label>
+      <input type="test" id="registerForm-username" formControlName="username" placeholder="Username">
+      <label for="registerForm-age">Your Age</label>
+      <input type="number" id="registerForm-age" formControlName="age" placeholder="Age">
+      <label for="registerForm-email">Email</label>
+      <input type="email" id="registerForm-email" formControlName="email" placeholder="Email">
+      <label for="loginForm-password">Password</label>
+      <input type="password" id="registerForm-password" formControlName="password" placeholder="Password">
+      <button type="submit" [disabled]="!registerForm.valid">Register</button>
+      <p>Already have account? <a routerLink="/login">Sign In</a></p>
+      <div *ngIf="form.submitted && isRegisterFailed" class="error">
+        Login failed: {{ errorMessage }}
+      </div>
+    </form>
+  </div>
+</div>
