@@ -1,19 +1,15 @@
 language: node_js
 node_js:
 - '14.17.3'
-rvm:
-  - 2.3.7
-  - 2.4.4
-  - 2.5.1
-  - 2.6.0
 before_install:
 - npm install -g @angular/cli
 install: 
   - npm install
-  - gem install faraday -v 1.9.3
 branches:
   only:
   - main
+before_deploy:
+  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.9.3
 deploy:
   provider: heroku
   app: angular-lab-steamlike
